@@ -14,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+Route::middleware('auth:api' , function (Request $request) {
     return $request->user();
 });
+
+route::get('absensi-pegawai/{id}', 'App\Http\Controllers\Api\PegawaiController@index');
+route::get('absensi-masuk/{id}', 'App\Http\Controllers\Api\PegawaiController@absen_masuk');
+route::get('absensi-keluar/{id}', 'App\Http\Controllers\Api\PegawaiController@absen_keluar');

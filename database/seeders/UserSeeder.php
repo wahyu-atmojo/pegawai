@@ -25,5 +25,27 @@ class UserSeeder extends Seeder
         $role->roles = 'admin';
         $role->user_id = $admin->id;
         $role->save();
+
+        $hrd = new User();
+		$hrd->name = 'HRD';
+		$hrd->email = 'hrd@gmail.com';
+		$hrd->password = bcrypt('12345678');
+		$hrd->save();
+
+        $role = new Role;
+        $role->roles = 'hrd';
+        $role->user_id = $hrd->id;
+        $role->save();
+
+        $manajer = new User();
+		$manajer->name = 'Manajer';
+		$manajer->email = 'manajer@gmail.com';
+		$manajer->password = bcrypt('12345678');
+		$manajer->save();
+
+        $role = new Role;
+        $role->roles = 'manajer';
+        $role->user_id = $manajer->id;
+        $role->save();
     }
 }
